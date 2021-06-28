@@ -1,3 +1,7 @@
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+
 Book Title: <%= @review.book_title %><br>
 My Rating: <%= @review.rating %><br>
 <img src="<%= @review.thumbnail %>" width="20%" height="auto" alt="default"><br><br>

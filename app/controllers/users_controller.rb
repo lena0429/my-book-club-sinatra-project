@@ -1,6 +1,8 @@
+require 'rack-flash'
+
 class UsersController < ApplicationController
-
-
+  use Rack::Flash
+  
     get '/signup' do
         if session[:user_id] == nil
         erb :"/users/new"
@@ -14,7 +16,7 @@ class UsersController < ApplicationController
         redirect "/reviews" 
       end
 
-      user = User.create(params)
+      user = User.new(params)
 
       if user.username.blank? || user.email.blank? || user.password.blank? || User.find_by_email(params["email"])
         redirect "/signup"

@@ -124,4 +124,8 @@
    position: relative;
  }
 
+ .flash {
+   font-size:100px;
+ }
+
 }

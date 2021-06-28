@@ -1,4 +1,12 @@
-<h2>Welcome to My Book Club!</h2>
+<div class="flash">
+<% if flash.has?(:message) %>
+<%= flash[:message] %>
+<% end %>
+</div>
+
+<h4>Welcome to My Book Club!</h4>
+<h4>Please log in.</h4>
+<br>
 <form action="/login" method="POST">
   Email: <input type="text" name="email"><br><br>
   Password: <input type="password" name="password"><br><br>

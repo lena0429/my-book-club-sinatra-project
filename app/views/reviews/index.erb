@@ -1,3 +1,7 @@
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+
 <h1>My Book Reviews</h1>
 <% @reviews.each do |review| %>
     <ol>

@@ -1,0 +1,25 @@
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+
+<h1>Edit the Review of <%= @review.book_title %></h1>
+
+<form action="/reviews/<%= @review.id %>" method="POST">
+<input type="hidden" id="hidden" name="_method" value="patch">
+  
+Edit the Book Title: <input type="text" name="updated_book_title" value="<%=@review.book_title %>">
+  Edit Your Review: <input type="text" name="updated_content" value="<%=@review.content%>"><br><br>
+  Your Rating: 
+  <span class="star-rating">
+  <input type="radio" name="rating" value="1">1<i></i>
+  <input type="radio" name="rating" value="2">2<i></i>
+  <input type="radio" name="rating" value="3">3<i></i>
+  <input type="radio" name="rating" value="4">4<i></i>
+  <input type="radio" name="rating" value="5">5<i></i>
+</span><br><br>
+Submit a Book Cover URL (optional):
+<input type="url" name="updated_thumbnail" value="<%=@review.thumbnail %>">
+<br>
+<br>
+  <button type="sbumit" id="submit">Edit</button>
+</form>
