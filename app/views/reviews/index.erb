@@ -1,0 +1,8 @@
+<h1>My Book Reviews</h1>
+<% @reviews.each do |review| %>
+    <ol>
+    <li><a href ="/reviews/<%= review.id %>"><img src="<%= review.thumbnail %>" width="100" height="100"><br><%= review.book_title %></a></li>
+    </ol>
+    <br>
+    <br>
+<% end %>    

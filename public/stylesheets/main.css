@@ -112,4 +112,16 @@
     font-size: 18px;
     line-height: 24px;
   }
+
+  .star-rating {
+   margin: 25px 0 0px;
+   font-size: 0;
+   white-space: nowrap;
+   display: inline-block;
+   width: 175px;
+   height: 35px;
+   overflow: hidden;
+   position: relative;
+ }
+
 }
