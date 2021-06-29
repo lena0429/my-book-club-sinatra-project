@@ -1,6 +1,6 @@
-<% if flash.has?(:message) %>
-  <%= flash[:message] %>
-<% end %>
+<strong><% if flash.has?(:message) %>
+<%= flash[:message] %>
+<% end %></strong>
 
 <h1>Edit the Review of <%= @review.book_title %></h1>
 
@@ -12,7 +12,7 @@
 <br>
 <br>
 <label>Edit Your Review:</label>
-<textarea id="content" name="updated_content" value="<%=@review.content%>"></textarea>
+<textarea id="content" rows="10" cols="50" name="updated_content"><%=@review.content%></textarea>
 <br>
 <br>
 <label>Edit Your Rating:</label> 
@@ -27,7 +27,7 @@
 <label>Edit Genres:</label>
 <% Genre.all.each do |genre| %>
   <label><%= genre.name %></label>
-  <input type="checkbox" name="review[genre_ids][]" value="<%= genre.id %>" id="<%= genre.name %>" <%='checked' if @review.genres.include?(genre) %>>
+  <input type="checkbox" name="[updated_genres][]" value="<%= genre.id %>" id="<%= genre.name %>" <%='checked' if @review.genres.include?(genre) %>>
 <% end %>
 <br>
 <br>

@@ -8,14 +8,9 @@
                 <p>💜💛💚Write your book reviews with <b>My Book Club</b>!💜💛💚<br><br> 
                 😍Share your thoughts with book lovers all over the world!😍</p>
             </article>
-            
-                <div class="reviewCard">
-                <img src="<%= @review.thumbnail %>">
-                <div class="cardRow">
-                    <a href="/reviews/<%= @review.id %>"><h5><%= @review.book_title %></h5></a>
-                </div>
-            </div> 
-
+            <a href="/reviews/<%= @review.id %>"><img src="<%= @review.thumbnail %>"><%= @review.book_title %><br>
+            A review by <%= @user.username %>
+            </a>
         </main>
     </div>
 

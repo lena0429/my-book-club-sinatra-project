@@ -10,7 +10,9 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    @review = Review.find(1)
+    @review = Review.last
+    id = @review.user_id
+    @user = User.find(id)
     erb :index
   end
 

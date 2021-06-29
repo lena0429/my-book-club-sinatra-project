@@ -25,6 +25,8 @@ class ReviewsController < ApplicationController
       get '/reviews/:id' do
         if logged_in?
           @review = Review.find(params[:id])
+          id = @review.user_id
+          @writer = User.find(id)
           @review.user = current_user
           erb :"/reviews/show"
         else
@@ -73,11 +75,12 @@ class ReviewsController < ApplicationController
             @review = Review.find(params[:id])
           end
 
-          if params[:updated_book_title] != "" || params[:updated_content] != "" || params[:updated_thumbnail] != "" || params[:updated_rating] != ""
+          if params[:updated_book_title] != "" || params[:updated_content] != "" || params[:updated_thumbnail] != "" || params[:updated_rating] != "" || params[:updated_genres] != ""
             @review.book_title = params[:updated_book_title]
             @review.content = params[:updated_content]
             @review.thumbnail = params[:updated_thumbnail]
             @review.rating = params[:updated_rating]
+            @review.genre_ids = params[:updated_genres]
             @review.save
           end 
           redirect "/reviews/#{@review.id}"

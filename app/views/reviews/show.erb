@@ -3,13 +3,17 @@
 <% end %>
 </div>
 
+<h5 style="text-align: right">welcome, <%= @review.user.username %></h5>
+
 <div class="mainContent">
         <main class="reviewGallery">
             <div class="reviewCard">
                 <img src="<%= @review.thumbnail %>">
                 <div class="cardRow">
                     <h2>Book Title: <%= @review.book_title %></h2><br><br>
-                    <h5>My Rating: <strong><%= @review.rating %>/5</strong></h5>
+                    <h2> A Review by <%= @writer.username %></h2> 
+                    <h5>My Rating: <strong><%= @review.rating %>/5</strong></h5><br>
+                    <h5>Book Genres:</h5> 
                     <% @review.genres.each do |genre| %>
                         <ul>
                           <li><a href="/genres/<%= genre.slug %>"><%= genre.name %></a></li>
