@@ -63,7 +63,7 @@ class ReviewsController < ApplicationController
           @review.user = current_user
           @review.save 
           flash[:message] = "Successfully created a review."
-          redirect "/reviews"
+          redirect "/reviews/#{@review.id}"
         else
           redirect "/reviews/new"
         end

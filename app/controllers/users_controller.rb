@@ -40,7 +40,7 @@ class UsersController < ApplicationController
         user = User.find_by(email: params[:email])
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
-            redirect "/reviews"
+            redirect "/users/#{user.slug}"
         else
           flash[:message] = "User not found. Please login again."
             redirect "/login"

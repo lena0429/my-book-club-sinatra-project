@@ -1,6 +1,6 @@
-<strong><% if flash.has?(:message) %>
-<%= flash[:message] %>
-<% end %></strong>
+<% if flash.has?(:message) %>
+  <h1 style="color: red; text-align: center"><%= flash[:message] %></h1>
+<% end %>
 
 <div class="myform">
 <h1 class="pageTitle">Edit the Review of <%= @review.book_title %></h1>
