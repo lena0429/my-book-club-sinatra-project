@@ -2,8 +2,8 @@
   <p class="flash"><%= flash[:message] %></p>
 <% end %>
 
-<div id="new_form">
-<h1>Create a New Review</h1>
+<div class="myform">
+<h1 class="pageTitle">Create a New Review</h1>
 
 <form action="/reviews" method="POST">
   
@@ -11,11 +11,11 @@
 <input type="text" name="book_title"><br><br>
 
 <label>Your Review:</label><br>
-<textarea id="content" name="content"></textarea><br><br>
+<textarea id="content" name="content" rows="10" cols="50"></textarea><br><br>
 
 <label>Genre(s) of Review:</label> 
   <% Genre.all.each do |genre| %></h4>
-    <input type="checkbox" name="genres[]" value="<%= genre.id %>" id="<%= genre.name %>"><%= genre.name %></input>
+    <input type="checkbox" name="genres[]" value="<%= genre.id %>" id="<%= genre.name %>"><i><%= genre.name %></i></input>
   <% end %>
   <br>
   <br>

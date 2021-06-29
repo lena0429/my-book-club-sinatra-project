@@ -4,29 +4,31 @@
 </div>
 
 <div class="mainContent">
-        <main class="reviewGallery">
-            <div class="reviewCard">
-                <img src="<%= @review.thumbnail %>">
-                <div class="cardRow">
-                    <h2>Book Title: <%= @review.book_title %></h2><br><br>
-                    <h2> A Review by <%= @writer.username %></h2> 
-                    <h5>My Rating: <strong><%= @review.rating %>/5</strong></h5><br>
-                    <h5>Book Genres:</h5> 
+<aside class="leftmenu">
+            <a href="/"><img width="100" src="/images/my-book-club-icon.png"/></a>
+            <ul>
+                <a href="/reviews"><li>All book reviews</li></a>
+                <a href="/genres"><li>All genres</li></a>
+                <a href="/reviews/new"><li>Create a new review</li></a>
+            </ul>
+        </aside>
+        <main class="main">
+        <article>
+            <header>
+                <h1 class="pageTitle"><i>A Review of</i> <%= @review.book_title %></h1>
+            </header>
+            <div>
+                    <h2> Posted by <a href="/users/@writer.slug"><%= @writer.username %></a></h2> 
+                    <h3>Author's Rating: <strong><%= @review.rating %>/5</strong></h3>
+                    <h3>Book Genres:</h3> 
                     <% @review.genres.each do |genre| %>
                         <ul>
                           <li><a href="/genres/<%= genre.slug %>"><%= genre.name %></a></li>
                         </ul>
                         <%end%>
+                        <br>
+                        <img src="<%= @review.thumbnail %>" >
+                        <p><%= @review.content %></p> 
                 </div>
-                <p><%= @review.content %></p>
-            </div>  
-        </main>
-        <aside class="leftmenu">
-            <ul>
-                <a href="/reviews/<%= @review.id %>/edit"><li>Edit this Review</li></a>
-                <a href="/reviews/new"><li>Write a New Review</li></a>
-                <a href="/reviews"><li>All Reviews</li></a>
-                <a href="/genres"><li>All Genres</li></a>
-            </ul>
-  </aside>
+        
 </div>

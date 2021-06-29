@@ -1,19 +1,30 @@
 
-    <div class="mainContent">
+<div class="mainContent">
+        <aside class="leftmenu">
+            <a href="/"><img width="100" src="images/my-book-club-icon.png"/></a>
+            <ul>
+                <a href="/reviews"><li>All book reviews</li></a>
+                <a href="/genres"><li>All genres</li></a>
+                <a href="/reviews/new"><li>Create a new review</li></a>
+            </ul>
+        </aside>
         <main class="main">
             <article>
                 <header>
-                    <h1 style="text-align: center" class="pageTitle">Welcome to My Book Club</h1>
+                    <h1 class="pageTitle">Welcome to My Book Club</h1>
                 </header>
+                <img src="images/book-giving-ideas.jpg" width="80%" alt="A book illustration" />
                 <p>💜💛💚Write your book reviews with <b>My Book Club</b>!💜💛💚<br><br> 
                 😍Share your thoughts with book lovers all over the world!😍</p>
             </article>
-            <a href="/reviews/<%= @review.id %>"><img src="<%= @review.thumbnail %>"><%= @review.book_title %><br>
-            A review by <%= @user.username %>
-            </a>
-        </main>
-    </div>
 
-<footer>
-        <p><small>&copy; 2021 <strong>My Book Club</strong></small></p>
-</footer>
+            <section id="promos">
+                <h2 style="font-family:verdana; text-align: center;">The Latest Review</h2>
+                <h3><i>A Review of </i><%= @review.book_title %></a></h3>
+                <p style="font-size: 1rem;">posted by <a href="/users/<%= @user.slug %>"><strong><%= @user.username %></strong></a></p>
+                <img class="thumbnail" src="<%= @review.thumbnail %>" />
+                <p style="text-align: right"><strong><a href="/reviews/<%= @review.id %>">Read all</a></strong><p>
+            </section>
+        </main>
+
+    </div>

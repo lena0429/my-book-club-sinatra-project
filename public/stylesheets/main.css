@@ -1,12 +1,7 @@
 /*Main Area*/
-
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin-top: 0px;
-  font-family: Verdana, 'Segoe UI', Tahoma, Geneva, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin-left: auto;
   margin-right: auto;
   background-color: #e6e4d9;
@@ -46,7 +41,7 @@ nav>ul>li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 10px;
+  padding: 16px;
   text-decoration: none;
   font-weight: bold;
 }
@@ -59,19 +54,21 @@ nav>ul>li a {
 }
 
 .leftmenu ul>a>li{
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: bold;
-  background-color: #ffca4f;
+  background-color: #cf4522;
   color: #fff;
   list-style: none;
-  padding: 5px 5px;
+  padding: 10px 10px;
   display: block;
   cursor: pointer;
   margin-bottom: 3px;
+  margin-right: 40px;
+  margin-left: 40px;
 }
 
 .leftmenu ul>a>li:hover{
-  background-color: #ffca4f;
+  background-color: #B43110;
 }
 
 .leftmenu ul>a{
@@ -96,51 +93,97 @@ nav>ul>li a {
 
 .pageTitle{
   font-size:35px;
-  color:#a593c2;
+  color:#cf4522;
 }
 
 .centerImage{
   align-self: flex-end;
 }
 
-/* Review Cards Section */
-div.gallery {
-  border: 1px solid #ccc;
+/*Pie Rows*/
+
+.main{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 70%;
 }
 
-div.gallery:hover {
-  border: 1px solid #777;
+.pieRow{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+  padding-right: .5rem;
 }
 
-div.gallery img {
-  width: 100%;
-  height: auto;
+.pieRow h5, .pieRow p{
+  margin: 0;
 }
 
-div.desc {
-  padding: 15px;
-  text-align: center;
+.pieRow > div{
+  flex-grow: 2;
+  padding-left: .5rem;
 }
 
-#new_form {
-  border: 1px solid;
-  padding: 15px;
-  margin: 15px;
+.pieRow > small{
+  flex-shrink: 3;
 }
 
-.responsive {
-  padding: 0 6px;
-  float: left;
-  width: 24.99999%;
+.pieGallery{
+  display: flex;
+  flex-direction: row;
+  flex-basis: 60%;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.pieGallery > .pieCard:nth-child(1){
+  flex-basis: 100%;
+}
+
+.pieCard{
+  display: flex;
+  flex-flow: column wrap;
+  margin: .4rem;
+  padding: .5rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+  flex-grow: 2;
+}
+
+.pieCard h5, .pieCard p{
+  margin: .2rem 0;
+}
+
+.pieCard > img{
+  align-self: center;
+}
+
+#promos{
+  align-self:center;
+  background-color: #fff;
+  padding: 10px 60px 10px 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+  border-radius: 25px;
+}
+
+.cardRow{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /*Footer*/
+
 footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 1rem;
-  background-color: #20d0c1;
 }
 
 /*Responsive code*/
@@ -154,4 +197,26 @@ footer {
   .pieGallery{
       flex-basis: 90%!important;
   }
+}
+
+
+/* form */
+.myform {
+  font-size: 1.2rem;
+  padding: 20px 20px 20px 40px;
+}
+
+
+/* scale the thumbnail */
+.thumbnail img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/*Test*/
+.box{
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  margin: 5px 10px;
 }

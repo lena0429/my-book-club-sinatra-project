@@ -2,7 +2,8 @@
 <%= flash[:message] %>
 <% end %></strong>
 
-<h1>Edit the Review of <%= @review.book_title %></h1>
+<div class="myform">
+<h1 class="pageTitle">Edit the Review of <%= @review.book_title %></h1>
 
 <form action="/reviews/<%= @review.id %>" method="POST">
 <input type="hidden" id="hidden" name="_method" value="patch">
@@ -37,3 +38,4 @@
 <br>
   <button type="sbumit" id="submit">Edit</button>
 </form>
+<div>
