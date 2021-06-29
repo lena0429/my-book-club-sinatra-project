@@ -27,7 +27,6 @@ class ReviewsController < ApplicationController
           @review = Review.find(params[:id])
           id = @review.user_id
           @writer = User.find(id)
-          @review.user = current_user
           erb :"/reviews/show"
         else
           redirect "/login"
