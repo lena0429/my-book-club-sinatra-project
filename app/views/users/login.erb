@@ -1,8 +1,6 @@
-<div class="flash">
 <% if flash.has?(:message) %>
-<%= flash[:message] %>
+  <h1 style="color: red; text-align: center"><%= flash[:message] %></h1>
 <% end %>
-</div>
 
 <div class="myform">
 <h1 class="pageTitle">Welcome to My Book Club!</h1>

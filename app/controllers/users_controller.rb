@@ -19,6 +19,7 @@ class UsersController < ApplicationController
       user = User.new(params)
 
       if user.username.blank? || user.email.blank? || user.password.blank? || User.find_by_email(params["email"])
+        flag[:message] = "ALERT:Username, email, or password can not be blank. Please signup again."
         redirect "/signup"
       else
         user.save
@@ -41,6 +42,7 @@ class UsersController < ApplicationController
             session[:user_id] = user.id
             redirect "/reviews"
         else
+          flash[:message] = "User not found. Please login again."
             redirect "/login"
         end
     end

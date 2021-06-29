@@ -14,7 +14,7 @@
             </header>
 
 
-<%@user.reviews.each do |review| %>
+<% @user.reviews.each do |review| %>
     <div class="pieRow">
                 <img src="<%= review.thumbnail %>" width="100px" class="thumbnail" alt="<%= review.book_title %>">
                 <div>

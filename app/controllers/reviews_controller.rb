@@ -44,7 +44,7 @@ class ReviewsController < ApplicationController
         if @review.user == current_user
           erb :"/reviews/edit"
         else
-          flash[:message] = "You are not allowed to edit other users' reviews! "
+          flash[:message] = "ALERT: You are not allowed to edit other users' reviews! "
           redirect "/reviews"
         end
       end
