@@ -1,0 +1,5 @@
+<h1><%= @genre.name %></h1>
+
+<% @genre.reviews.each do |review| %>
+    <%= review.book_title %>
+<%end%>    

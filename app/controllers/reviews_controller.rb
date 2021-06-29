@@ -53,9 +53,12 @@ class ReviewsController < ApplicationController
           flash[:message] = "Please login first."
           redirect "/login"
         end
-
-        if !params[:book_title].empty? && !params[:rating].empty? && !params[:content].empty? && !params[:thumbnail].empty?
-          @review = Review.create(params)
+        if !params[:book_title].empty? && !params[:rating].empty? && !params[:genres].empty? && !params[:content].empty? && !params[:thumbnail].empty?
+          @review = Review.create(book_title: params[:book_title])
+          @review.content = params[:content]
+          @review.thumbnail = params[:thumbnail]
+          @review.rating = params[:rating]
+          @review.genre_ids = params[:genres]
           @review.user = current_user
           @review.save 
           flash[:message] = "Successfully created a review."
@@ -70,10 +73,11 @@ class ReviewsController < ApplicationController
             @review = Review.find(params[:id])
           end
 
-          if params[:updated_book_title] != "" || params[:updated_content] != "" || params[:updated_thumbnail] != ""
+          if params[:updated_book_title] != "" || params[:updated_content] != "" || params[:updated_thumbnail] != "" || params[:updated_rating] != ""
             @review.book_title = params[:updated_book_title]
             @review.content = params[:updated_content]
             @review.thumbnail = params[:updated_thumbnail]
+            @review.rating = params[:updated_rating]
             @review.save
           end 
           redirect "/reviews/#{@review.id}"

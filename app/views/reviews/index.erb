@@ -2,11 +2,15 @@
   <%= flash[:message] %>
 <% end %>
 
-<h1>My Book Reviews</h1>
-<% @reviews.each do |review| %>
-    <ol>
-    <li><a href ="/reviews/<%= review.id %>"><img src="<%= review.thumbnail %>" width="100" height="100"><br><%= review.book_title %></a></li>
-    </ol>
-    <br>
-    <br>
-<% end %>    
+<div class="responsive">
+<h2>View All Book Reviews</h2>
+  <% @reviews.each do |review| %>
+    <a target="_blank" href="/reviews/<%= review.id %>">
+      <img src="<%= review.thumbnail %>" alt="<%= review.book_title %>" width="600" height="400">
+    </a>
+    <div><%= review.book_title %></div>
+    <% end %>
+  </div>
+</div>
+
+   

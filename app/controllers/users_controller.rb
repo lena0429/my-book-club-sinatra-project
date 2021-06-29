@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
     post '/signup' do
       if logged_in?
-        redirect "/reviews" 
+        redirect "/reviews"
       end
 
       user = User.new(params)

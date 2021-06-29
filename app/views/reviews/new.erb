@@ -2,12 +2,25 @@
   <p class="flash"><%= flash[:message] %></p>
 <% end %>
 
+<div id="new_form">
 <h1>Create a New Review</h1>
 
 <form action="/reviews" method="POST">
-  Book Title: <input type="text" name="book_title"><br><br>
-  Your Review: <input type="text" name="content"><br><br>
-  Your Rating: 
+  
+<label>Book Title:</label> 
+<input type="text" name="book_title"><br><br>
+
+<label>Your Review:</label><br>
+<textarea id="content" name="content"></textarea><br><br>
+
+<label>Genre(s) of Review:</label> 
+  <% Genre.all.each do |genre| %></h4>
+    <input type="checkbox" name="genres[]" value="<%= genre.id %>" id="<%= genre.name %>"><%= genre.name %></input>
+  <% end %>
+  <br>
+  <br>
+
+<label>Your Rating:</label> 
   <span class="star-rating">
   <input type="radio" name="rating" value="1">1<i></i>
   <input type="radio" name="rating" value="2">2<i></i>
@@ -15,9 +28,12 @@
   <input type="radio" name="rating" value="4">4<i></i>
   <input type="radio" name="rating" value="5">5<i></i>
 </span><br><br>
-Submit a Book Cover URL (optional):
+
+<label>Submit a Book Cover URL:</label>
 <input type="url" name="thumbnail">
 <br>
 <br>
   <button type="sbumit" id="submit">Create</button>
 </form>
+
+</div>

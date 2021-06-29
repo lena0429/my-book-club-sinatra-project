@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
     has_secure_password
     has_many :reviews
+    has_many :genres, through: :reviews
 
     def slug
         username.downcase.gsub(" ","-")

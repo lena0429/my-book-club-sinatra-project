@@ -1,131 +1,157 @@
-@media screen {
-  /* --- Reset Styles --- */
-  * {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+/*Main Area*/
 
-  html, body {
-    height: 100%;
-    width: 100%;
-  }
-
-  /* --- Welcome Page Styles --- */
-  body {
-    background-color: lightblue;
-    color: #333;
-    font-family: Sans-Serif;
-    line-height: 18px;
-  }
-
-  .wrapper {
-    background: #fff;
-    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    box-shadow: 0 0 10px rgba(0,0,0,.3);
-    margin: 16px auto;
-    max-width: 960px;
-    padding: 2.25%; /* 18px / 800px */
-    width: 85%;
-  }
-
-  h1 {
-    font-size: 36px;
-    line-height: 54px;
-  }
-
-  h2 {
-    border-bottom: 2px solid #ccc;
-    font-size: 24px;
-    line-height: 36px;
-    margin-bottom: 16px;
-  }
-
-  h3 {
-    font-size: 18px;
-    line-height: 36px;
-  }
-
-  p {
-    margin-bottom: 18px;
-  }
-
-  .main {
-    overflow: hidden;
-  }
-
-  .content {
-    float: left;
-    width: 60%; /* 480px / 800px */
-  }
-
-  .sidebar {
-    background: #eee;
-    border: 1px solid #ccc;
-    float: right;
-    padding: 2.08333333333%; /* 5px / 240px */
-    width: 30%; /* 240px / 800px */
-  }
-
-  .sidebar ul {
-    font-size: 14px;
-  }
-
-  .branding {
-    clear: both;
-  }
-
-  footer.branding {
-    border-top: 2px solid #ccc;
-    margin-top: 20px;
-    padding-top: 20px;
-  }
+* {
+  box-sizing: border-box;
 }
 
+body {
+  margin-top: 0px;
+  font-family: Verdana, 'Segoe UI', Tahoma, Geneva, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #e6e4d9;
+  background-image: url('../images/pattern.png');
+}
+
+#mainheader {
+  background-color: #20d0c1;
+}
+
+/*Top Menu*/
+
+nav {
+  height: 60px;
+  width: 80%;
+  margin: 0 auto 20px;
+}
+
+nav>ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav>ul>li:nth-child(1){
+  flex-grow: 1;
+}
+
+/*nav>ul>li {
+  float: left;
+}*/
+
+nav>ul>li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/*Side Menu*/
+
+.leftmenu ul{
+  padding-inline-start: 0;
+  margin-right: 0;
+}
+
+.leftmenu ul>a>li{
+  font-size: 0.8rem;
+  font-weight: bold;
+  background-color: #ffca4f;
+  color: #fff;
+  list-style: none;
+  padding: 5px 5px;
+  display: block;
+  cursor: pointer;
+  margin-bottom: 3px;
+}
+
+.leftmenu ul>a>li:hover{
+  background-color: #ffca4f;
+}
+
+.leftmenu ul>a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.leftmenu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Main Content*/
+
+.mainContent{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pageTitle{
+  font-size:35px;
+  color:#a593c2;
+}
+
+.centerImage{
+  align-self: flex-end;
+}
+
+/* Review Cards Section */
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+#new_form {
+  border: 1px solid;
+  padding: 15px;
+  margin: 15px;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+/*Footer*/
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  background-color: #20d0c1;
+}
+
+/*Responsive code*/
 @media screen and (max-width: 600px) {
-  .wrapper {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    width: auto;
+  .leftmenu{
+      order: 2;
   }
-
-  .content, .sidebar {
-    float: none;
-    width: 100%;
+  .main{
+      flex-basis: 90%!important;
   }
-
-  .sidebar {
-    background: transparent;
-    border: none;
-    border-top: 2px solid #ccc;
-    padding: 0;
+  .pieGallery{
+      flex-basis: 90%!important;
   }
-
-  h1 {
-    font-size: 24px;
-    line-height: 36px;
-  }
-
-  h2 {
-    font-size: 18px;
-    line-height: 24px;
-  }
-
-  .star-rating {
-   margin: 25px 0 0px;
-   font-size: 0;
-   white-space: nowrap;
-   display: inline-block;
-   width: 175px;
-   height: 35px;
-   overflow: hidden;
-   position: relative;
- }
-
- .flash {
-   font-size:100px;
- }
-
 }

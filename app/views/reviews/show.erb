@@ -1,11 +1,30 @@
-<% if flash.has?(:message) %>
-  <%= flash[:message] %>
+<div style="color:red"><% if flash.has?(:message) %>
+  <small><strong><%= flash[:message] %></strong></small>
 <% end %>
+</div>
 
-Book Title: <%= @review.book_title %><br>
-My Rating: <%= @review.rating %><br>
-<img src="<%= @review.thumbnail %>" width="20%" height="auto" alt="default"><br><br>
-My Review: <%= @review.content %>
-<br>
-
-
+<div class="mainContent">
+        <main class="reviewGallery">
+            <div class="reviewCard">
+                <img src="<%= @review.thumbnail %>">
+                <div class="cardRow">
+                    <h2>Book Title: <%= @review.book_title %></h2><br><br>
+                    <h5>My Rating: <strong><%= @review.rating %>/5</strong></h5>
+                    <% @review.genres.each do |genre| %>
+                        <ul>
+                          <li><a href="/genres/<%= genre.slug %>"><%= genre.name %></a></li>
+                        </ul>
+                        <%end%>
+                </div>
+                <p><%= @review.content %></p>
+            </div>  
+        </main>
+        <aside class="leftmenu">
+            <ul>
+                <a href="/reviews/<%= @review.id %>/edit"><li>Edit this Review</li></a>
+                <a href="/reviews/new"><li>Write a New Review</li></a>
+                <a href="/reviews"><li>All Reviews</li></a>
+                <a href="/genres"><li>All Genres</li></a>
+            </ul>
+  </aside>
+</div>

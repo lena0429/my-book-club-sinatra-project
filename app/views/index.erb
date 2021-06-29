@@ -1,23 +1,24 @@
-<div class="container">
-  <header><img src="images/corneal-small.png" class="img-responsive main-image"></header>
-  <div class="col-md-8 col-md-offset-2">
-    <h2>Sinatra Template Default Page</h2>
 
-    <div class="content">
-      <p>Welcome to the Sinatra Template! If you're seeing this page, then everything is working
-      as expected. To get started, delete this file (<code>app/views/welcome.erb)</code> and begin adding
-      your own actions to <code>application_controller.rb</code>. For more information, see the <a href="https://github.com/thebrianemory/corneal">README</a>.</p>
+    <div class="mainContent">
+        <main class="main">
+            <article>
+                <header>
+                    <h1 style="text-align: center" class="pageTitle">Welcome to My Book Club</h1>
+                </header>
+                <p>💜💛💚Write your book reviews with <b>My Book Club</b>!💜💛💚<br><br> 
+                😍Share your thoughts with book lovers all over the world!😍</p>
+            </article>
+            
+                <div class="reviewCard">
+                <img src="<%= @review.thumbnail %>">
+                <div class="cardRow">
+                    <a href="/reviews/<%= @review.id %>"><h5><%= @review.book_title %></h5></a>
+                </div>
+            </div> 
+
+        </main>
     </div>
 
-    <div class="sidebar">
-      <h3>Environment</h3>
-      <ul>
-        <li><b>Ruby:</b> <%= RUBY_VERSION %></li>
-        <li><b>Environment:</b> <%= ENV["RACK_ENV"] %></li>
-        <li><b>Server:</b> <%= @env["SERVER_SOFTWARE"] %></li>
-        <li><b>Port:</b> <%= @env["SERVER_PORT"] %></li>
-      </ul>
-    </div>
-
-  </div>
-</div>
+<footer>
+        <p><small>&copy; 2021 <strong>My Book Club</strong></small></p>
+</footer>
