@@ -82,8 +82,39 @@ nav>ul>li a {
   align-items: center;
 }
 
-/*Main Content*/
+/* form */
+.myform {
+  font-size: 1.2rem;
+  padding: 20px 20px 20px 40px;
+}
 
+
+/* scale the thumbnail */
+.thumbnail img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* button style */
+.mybutton {
+  font-weight: bold;
+  cursor: pointer;
+  background-color:#cf4522;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.mybutton:hover{
+  background-color: #B43110;
+}
+
+
+/*Main Content*/
 .mainContent{
   display: flex;
   flex-direction: row;
@@ -200,23 +231,3 @@ footer {
 }
 
 
-/* form */
-.myform {
-  font-size: 1.2rem;
-  padding: 20px 20px 20px 40px;
-}
-
-
-/* scale the thumbnail */
-.thumbnail img {
-  max-height: 100%;
-  max-width: 100%;
-}
-
-/*Test*/
-.box{
-  width: 200px;
-  height: 100px;
-  background-color: red;
-  margin: 5px 10px;
-}
