@@ -6,8 +6,9 @@ class UsersController < ApplicationController
     get '/signup' do
         if session[:user_id] == nil
         erb :"/users/new"
-        else 
-            redirect "/reviews"
+        else
+            @user = current_user 
+            redirect "/users/#{@user.slug}"
         end
     end
 
