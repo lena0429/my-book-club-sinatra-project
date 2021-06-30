@@ -1,10 +1,9 @@
-<div style="color:red"><% if flash.has?(:message) %>
-  <small><strong><%= flash[:message] %></strong></small>
+<% if flash.has?(:message) %>
+  <h1 style="color: red; text-align: center"><%= flash[:message] %></h1>
 <% end %>
-</div>
 
 <div class="mainContent">
-<aside class="leftmenu">
+  <aside class="leftmenu">
             <a href="/"><img width="100" src="/images/my-book-club-icon.png"/></a>
             <ul>
                 <a href="/reviews/<%= @review.id %>/edit"><li>Edit this review</li></a>
@@ -12,13 +11,13 @@
                 <a href="/genres"><li>All genres</li></a>
                 <a href="/reviews/new"><li>Create a new review</li></a>
             </ul>
-        </aside>
-        <main class="main">
-        <article>
+  </aside>
+  
+  <main class="main">
             <header>
                 <h1 class="pageTitle"><i>A Review of</i> <%= @review.book_title %></h1>
             </header>
-            <div>
+              <div>
                     <h2> Posted by <a href="/users/<%= @writer.slug %>"><%= @writer.username %></a></h2> 
                     <h3>Author's Rating: <strong><%= @review.rating %>/5</strong></h3>
                     <h3>Book Genres:</h3> 
@@ -30,6 +29,7 @@
                         <br>
                         <img src="<%= @review.thumbnail %>" >
                         <p><%= @review.content %></p> 
-                </div>
-        
+               </div>
+  </main>
+  
 </div>

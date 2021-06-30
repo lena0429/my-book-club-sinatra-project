@@ -1,30 +1,30 @@
 <div class="mainContent">
-<aside class="leftmenu">
+  
+  <aside class="leftmenu">
             <a href="/"><img width="100" src="/images/my-book-club-icon.png"/></a>
             <ul>
                 <a href="/reviews"><li>All book reviews</li></a>
                 <a href="/genres"><li>All genres</li></a>
                 <a href="/reviews/new"><li>Create a new review</li></a>
             </ul>
-        </aside>
-        <main class="main">
-        <article>
-            <header>
-                <h1 class="pageTitle">Genre: <%= @genre.name %></h1>
-            </header>
+  </aside>
+  <main class="main">
+        <header>
+            <h1 class="pageTitle">Genre: <%= @genre.name %></h1>
+        </header>
 
-            <% @genre.reviews.each do |review| %>
-                <div class="pieRow">
-                        <img src="<%= review.thumbnail %>" width="100px" class="thumbnail" alt="<%= review.book_title %>">
-                        <div>
-                            <h2><i>A Review of</i> <%= review.book_title %></h2>
-                            <p style="font-family:verdana;">Author: <a href="users/<%= review.user.slug %>"><%= review.user.username %></a></p>
-                            <p style="font-family:verdana; font-size: 0.9rem;">Author's rating: <%= review.rating %> / 5</p>
-                        </div>
-                        <small><strong><a href="/reviews/<%= review.id %>">Read this review</a></strong></small>
-                    </div>
-                    <% end %>
-
+        <% @genre.reviews.each do |review| %>
+        <div class="pieRow">
+            <img src="<%= review.thumbnail %>" width="100px" class="thumbnail" alt="<%= review.book_title %>">
+            <div>
+                <h2><i>A Review of</i> <%= review.book_title %></h2>
+                <p style="font-family:verdana;">Author: <a href="users/<%= review.user.slug %>"><%= review.user.username %></a></p>
+                <p style="font-family:verdana; font-size: 0.9rem;">Author's rating: <%= review.rating %> / 5</p>
+            </div>
+                <small><strong><a href="/reviews/<%= review.id %>">Read this review</a></strong></small>
+        </div>
+        <% end %>
+  </main>
 </div>
 
  
