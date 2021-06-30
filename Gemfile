@@ -9,6 +9,7 @@ gem 'thin'
 gem 'bcrypt'
 gem 'foreman'
 gem 'rack-flash3'
+gem 'rails_12factor'
 
 group :production do
   gem 'pg', '~> 0.20'
