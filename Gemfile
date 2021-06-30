@@ -10,6 +10,7 @@ gem 'bcrypt'
 gem 'foreman'
 gem 'rack-flash3'
 gem 'rails_12factor'
+gem 'dotenv'
 
 group :production do
   gem 'pg', '~> 0.20'
