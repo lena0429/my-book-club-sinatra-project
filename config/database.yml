@@ -1,10 +1,11 @@
-default: &default
-  adapter: 'sqlite3'
-  database: 'db/development.sqlite'
+# config/database.yml
 
 development:
-  <<: *default
-
-test:
-  <<: *default
-  database: 'db/test.sqlite'
+  adapter: sqlite3
+  encoding: unicode
+  database: db/development.sqlite3
+  pool: 5
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
