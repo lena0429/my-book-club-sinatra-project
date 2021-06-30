@@ -1,6 +1,6 @@
-Specifications for the Sinatra Assessment
+# Specifications for the Sinatra Assessment
 
-Specs:
+# Specs:
 
  x Use Sinatra to build the app
  x Use ActiveRecord for storing information in a database
@@ -14,7 +14,7 @@ Specs:
  x BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
  x Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
 
-Confirm
+# Confirm
 
  x You have a large number of small Git commits
  x Your commit messages are meaningful
