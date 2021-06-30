@@ -1,7 +1,5 @@
 # 💜💛 My-Book-Club-Sinatra-App 💛💜
 
-# Introduction
-
 Welcome to My Book Club App! It is built with Sinatra which allows users to create, edit and track their posts of book reviews with secure personal account. The users are also allowed to view others' posts but are not allowed to edit or delete other's posts.
 
 # Live Site
