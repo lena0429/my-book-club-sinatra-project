@@ -39,7 +39,6 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     diff-lcs (1.4.4)
-    dotenv (2.7.6)
     eventmachine (1.2.7)
     foreman (0.87.2)
     i18n (1.8.10)
@@ -125,7 +124,6 @@ DEPENDENCIES
   bcrypt
   capybara
   database_cleaner!
-  dotenv
   foreman
   pg (~> 0.20)
   pry
@@ -142,4 +140,4 @@ DEPENDENCIES
   tux
 
 BUNDLED WITH
-   2.2.18
+   2.2.21

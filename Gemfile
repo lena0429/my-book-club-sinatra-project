@@ -8,7 +8,6 @@ gem 'require_all'
 gem 'thin'
 gem 'bcrypt'
 gem 'foreman'
-gem 'dotenv'
 gem 'rack-flash3'
 
 group :production do
