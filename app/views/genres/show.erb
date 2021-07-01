@@ -18,7 +18,7 @@
             <img src="<%= review.thumbnail %>" width="100px" class="thumbnail" alt="<%= review.book_title %>">
             <div>
                 <h2><i>A Review of</i> <%= review.book_title %></h2>
-                <p style="font-family:verdana;">Author: <a href="users/<%= review.user.slug %>"><%= review.user.username %></a></p>
+                <p style="font-family:verdana;">Author: <a href="/users/<%= review.user.slug %>"><%= review.user.username %></a></p>
                 <p style="font-family:verdana; font-size: 0.9rem;">Author's rating: <%= review.rating %> / 5</p>
             </div>
                 <small><strong><a href="/reviews/<%= review.id %>">Read this review</a></strong></small>
