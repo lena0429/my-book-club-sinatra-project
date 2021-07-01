@@ -8,10 +8,12 @@ https://sinatra-book-app.herokuapp.com/
 Please feel free to visit the live site and leave me any comments. Have fun!
 
 # Installation 
+
 $ bundle install
 
 # Usage
 In the directory, type the below in your terminal:
+
 $ rakcup config.ru
 
 # Contributing
