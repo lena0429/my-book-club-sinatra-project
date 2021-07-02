@@ -57,11 +57,12 @@ class UsersController < ApplicationController
         end
     end
      
-    get '/users/:slug' do 
-      if !logged_in?
-        flash[:message] = "Please login first."
-        redirect "/login"
-      end
+    get '/users/:slug' do
+      if_not_logged_in_then_redirect_to_login 
+      #if !logged_in?
+      #  flash[:message] = "Please login first."
+      #  redirect "/login"
+      #end
       
         @user = User.find_by_slug(params[:slug])
         erb :"/users/show"

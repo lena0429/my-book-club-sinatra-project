@@ -4,20 +4,14 @@ class ReviewsController < ApplicationController
   use Rack::Flash
 
      get '/reviews' do
-        if !logged_in?
-          flash[:message] = "Please login first."
-          redirect "/login"
-        end
+        if_not_logged_in_then_redirect_to_login
 
         @reviews = Review.all
         erb :"/reviews/index"
       end
 
      get '/reviews/new' do
-        if !logged_in?
-          flash[:message] = "Please login first."
-          redirect "/login"
-        end
+        if_not_logged_in_then_redirect_to_login
 
         erb :"/reviews/new"
       end
@@ -34,10 +28,7 @@ class ReviewsController < ApplicationController
       end
 
       get '/reviews/:id/edit' do
-        if !logged_in?
-          flash[:message] = "Please login first."
-          redirect "/login"
-        end
+        if_not_logged_in_then_redirect_to_login
 
         @review = Review.find(params["id"])
         
@@ -50,10 +41,8 @@ class ReviewsController < ApplicationController
       end
 
       post '/reviews' do
-        if !logged_in?
-          flash[:message] = "Please login first."
-          redirect "/login"
-        end
+        if_not_logged_in_then_redirect_to_login
+
         if !params[:book_title].empty? && !params[:rating].empty? && !params[:genres].empty? && !params[:content].empty? && !params[:thumbnail].empty?
           @review = Review.create(book_title: params[:book_title])
           @review.content = params[:content]
@@ -86,10 +75,7 @@ class ReviewsController < ApplicationController
         end
 
         delete '/reviews/:id' do
-          if !logged_in?
-            flash[:message] = "Please login first."
-            redirect "/login"
-          end
+          if_not_logged_in_then_redirect_to_login
 
           @review = Review.find(params["id"])
           if logged_in? && @review.user == current_user

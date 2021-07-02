@@ -18,6 +18,13 @@ class ApplicationController < Sinatra::Base
 
   helpers do
      
+    def if_not_logged_in_then_redirect_to_login
+      if !logged_in?
+      flash[:message] = "Please login first."
+      redirect "/login"
+      end
+    end
+
     def logged_in?
       !!current_user
     end

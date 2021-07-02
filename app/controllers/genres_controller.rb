@@ -1,10 +1,7 @@
 class GenresController < ApplicationController
     
     get '/genres' do
-        if !logged_in?
-            flash[:message] = "Please login first."
-            redirect "/login"
-          end
+       if_not_logged_in_then_redirect_to_login 
 
         @genres = Genre.all
         erb :"/genres/index"
@@ -12,10 +9,7 @@ class GenresController < ApplicationController
 
 
     get '/genres/:slug' do
-        if !logged_in?
-            flash[:message] = "Please login first."
-            redirect "/login"
-          end
+      if_not_logged_in_then_redirect_to_login
 
         @genre = Genre.find_by_slug(params[:slug])
         erb :'/genres/show'
