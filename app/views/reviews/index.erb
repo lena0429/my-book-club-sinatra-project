@@ -6,17 +6,17 @@
   <aside class="leftmenu">
     <a href="/"><img width="100" src="/images/my-book-club-icon.png"/></a>
         <ul>
-                <a href="/reviews"><li>All book reviews</li></a>
-                <a href="/genres"><li>All genres</li></a>
-                <a href="/reviews/new"><li>Create a new review</li></a>
+                <a href="/reviews"><li>All Reviews</li></a>
+                <a href="/genres"><li>All Genre</li></a>
+                <a href="/reviews/new"><li>New Review</li></a>
                 <% user = current_user %> 
-                <a href="/users/<%= user. slug %>"><li>View my homepage</li></a>
+                <a href="/users/<%= user. slug %>"><li>My Page</li></a>
         </ul>
   </aside>
   
   <main class="main">
     <header>
-      <h1 class="pageTitle">View All Book Reviews</h1>
+      <h1 class="pageTitle">All Book Reviews</h1>
     </header>
         
     <% @reviews.each do |review| %>
@@ -27,7 +27,7 @@
           <p style="font-family:verdana;">Author: <a href="users/<%= review.user.slug %>"><%= review.user.username %></a></p>
           <p style="font-family:verdana; font-size: 0.9rem;">Author's rating: <%= review.rating %> / 5</p>
         </div>
-          <small><strong><a href="/reviews/<%= review.id %>">Read this review</a></strong></small>
+          <small><strong><a href="/reviews/<%= review.id %>">Read Full Review</a></strong></small>
      </div>
     <% end %>
   </main>  

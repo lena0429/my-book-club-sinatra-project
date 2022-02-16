@@ -6,9 +6,9 @@
   <aside class="leftmenu">
             <a href="/"><img width="100" src="/images/my-book-club-icon.png"/></a>
             <ul>
-                <a href="/reviews"><li>All book reviews</li></a>
-                <a href="/genres"><li>All genres</li></a>
-                <a href="/reviews/new"><li>Create a new review</li></a>
+                <a href="/reviews"><li>All Reviews</li></a>
+                <a href="/genres"><li>All Genre</li></a>
+                <a href="/reviews/new"><li>New Review</li></a>
             </ul>
   </aside>
   
@@ -29,11 +29,11 @@
                         <img src="<%= @review.thumbnail %>" >
                         <p><%= @review.content %></p>
 
-                        <a href="/reviews/<%= @review.id %>/edit"><button class="mybutton">Edit review</button></a>
+                        <a href="/reviews/<%= @review.id %>/edit"><button class="mybutton">Edit Review</button></a>
                         <br><br>
                         <form action="/reviews/<%= @review.id %>" method="POST">
                           <input type="hidden" name="_method" value="delete">
-                          <button class="mybutton" type="submit" value="Delete review">Delete review</button>
+                          <button class="mybutton" type="submit" value="Delete review">Delete Review</button>
                         </form> 
                </div>
   </main>
