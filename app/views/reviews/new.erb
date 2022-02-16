@@ -13,7 +13,7 @@
 <label>Your Review:</label><br>
 <textarea id="content" name="content" rows="10" cols="50"></textarea><br><br>
 
-<label>Genre(s) of Review:</label> 
+<label>Genre of Review:</label> 
   <% Genre.all.each do |genre| %></h4>
     <input type="checkbox" name="genres[]" value="<%= genre.id %>" id="<%= genre.name %>"><i><%= genre.name %></i></input>
   <% end %>

@@ -19,7 +19,7 @@
               <div>
                     <h2> Posted by <a href="/users/<%= @writer.slug %>"><%= @writer.username %></a></h2> 
                     <h3>Author's Rating: <strong><%= @review.rating %>/5</strong></h3>
-                    <h3>Book Genres:</h3> 
+                    <h3>Genre:</h3> 
                     <% @review.genres.each do |genre| %>
                         <ul>
                           <li><a href="/genres/<%= genre.slug %>"><%= genre.name %></a></li>
