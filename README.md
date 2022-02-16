@@ -1,9 +1,9 @@
-# 💜💛 My-Book-Club-Sinatra-App 💛💜
+# 💜💛 Book-Review-Club-App 💛💜
 <img src="./public/images/book-reviews-club.jpg" alt="project thumbnail" />
 
 ### MVC Sinatra application with user authentication and CRUD operations.
 
-Welcome to My Book Club App! It is built with Sinatra that allows users to create, edit and track their posts of book reviews with secure personal accounts. The users are allowed to view others' posts but are not allowed to edit or delete others' posts.
+Welcome to the Book Review Club App! It is built with Sinatra that allows users to create, edit and track their posts of book reviews with secure personal accounts. The users are allowed to view others' posts but are not allowed to edit or delete others' posts.
 
 ## Features
 * Modeled custom database schema with SQLite,  Active Record, and Sinatra 
