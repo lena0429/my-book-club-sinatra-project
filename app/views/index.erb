@@ -4,17 +4,17 @@
             <a href="/"><img width="100" src="images/my-book-club-icon.png"/></a>
             <ul>
                 <a href="/reviews"><li>All Reviews</li></a>
-                <a href="/genres"><li>All Genre</li></a>
+                <a href="/genres"><li>All Genres</li></a>
                 <a href="/reviews/new"><li>New Review</li></a>
             </ul>
         </aside>
         <main class="main">
             <article>
                 <header>
-                    <h1 class="pageTitle">Welcome to My Book Club</h1>
+                    <h1 class="pageTitle">Welcome to My Book Review Club</h1>
                 </header>
                 <img src="images/book-giving-ideas.jpg" width="80%" alt="A book illustration" />
-                <p>💜💛💚Write your book reviews with <b>My Book Club</b>!💜💛💚<br><br> 
+                <p>💜💛💚Write your book reviews with <b>My Book Review Club</b>!💜💛💚<br><br> 
                 😍Share your thoughts with book lovers all over the world!😍</p>
             </article>
 
@@ -23,7 +23,7 @@
                 <h3><i>A Review of </i><%= @review.book_title %></a></h3>
                 <p style="font-size: 1rem;">posted by <a href="/users/<%= @user.slug %>"><strong><%= @user.username %></strong></a></p>
                 <img class="thumbnail" src="<%= @review.thumbnail %>" />
-                <p style="text-align: right"><strong><a href="/reviews/<%= @review.id %>">Read more</a></strong><p>
+                <p style="text-align: right"><strong><a href="/reviews/<%= @review.id %>">Read More</a></strong><p>
             </section>
         </main>
 
